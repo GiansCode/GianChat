@@ -1,5 +1,5 @@
-# Maven build directory
-target/
+# Gradle build directory
+.gradle/
 
 # Compiled class files
 *.class
