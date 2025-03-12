@@ -15,8 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.Arrays;
-import java.util.List;
 
 public class GianChat extends JavaPlugin {
     private FormatManager formatManager;
@@ -120,44 +118,63 @@ public class GianChat extends JavaPlugin {
     }
 
     private void generatePlaceholdersFile() {
-        File file = new File(getDataFolder(), "placeholders.txt");
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-                List<String> placeholders = Arrays.asList(
-                    "Available Placeholders:",
-                    "",
-                    "General Placeholders:",
-                    "%player_name% - Player's name",
-                    "%player_displayname% - Player's display name",
-                    "%player_uuid% - Player's UUID",
-                    "",
-                    "Vault Placeholders:",
-                    "%vault_prefix% - Player's prefix from permissions plugin",
-                    "%vault_suffix% - Player's suffix from permissions plugin",
-                    "%vault_group% - Player's primary group",
-                    "",
-                    "Statistics Placeholders:",
-                    "%statistic_hours_played% - Player's total hours played",
-                    "%statistic_blocks_broken% - Total blocks broken by player",
-                    "%statistic_blocks_placed% - Total blocks placed by player",
-                    "",
-                    "Private Message Placeholders:",
-                    "%sender_player_name% - Name of the player sending the message",
-                    "%recipient_player_name% - Name of the player receiving the message",
-                    "%sender_vault_group% - Group of the player sending the message",
-                    "%recipient_vault_group% - Group of the player receiving the message",
-                    "",
-                    "Mention Placeholders:",
-                    "%mentioned_player_name% - Name of the mentioned player",
-                    "%mentioner_player_name% - Name of the player who mentioned someone",
-                    "",
-                    "Note: All placeholders support PlaceholderAPI expansion placeholders."
-                );
-                Files.write(file.toPath(), placeholders, StandardCharsets.UTF_8);
-            } catch (IOException e) {
-                getLogger().warning("Failed to create placeholders.txt: " + e.getMessage());
-            }
+        File placeholdersFile = new File(getDataFolder(), "placeholders.txt");
+        try {
+            String content = """
+                GianChat PlaceholderAPI Placeholders
+                ==================================
+
+                These placeholders are provided by GianChat through PlaceholderAPI.
+                Make sure you have PlaceholderAPI installed to use these placeholders.
+
+                Format Placeholders
+                -------------------
+                %gianchat_format_name%
+                Description: Gets the name of the player's current chat format
+                Example: %gianchat_format_name% -> VIP
+
+                %gianchat_format_prefix%
+                Description: Gets the prefix of the player's current chat format
+                Example: %gianchat_format_prefix% -> [VIP]
+
+                %gianchat_format_name_format%
+                Description: Gets the name format of the player's current chat format
+                Example: %gianchat_format_name_format% -> <gold>%player_name%
+
+                %gianchat_format_separator%
+                Description: Gets the separator of the player's current chat format
+                Example: %gianchat_format_separator% -> :
+
+                Message Placeholders
+                -------------------
+                %gianchat_message_toggle%
+                Description: Returns "enabled" if the player has private messages enabled, "disabled" otherwise
+                Example: %gianchat_message_toggle% -> enabled
+
+                %gianchat_message_last_messager%
+                Description: Gets the name of the last player who messaged the player
+                Example: %gianchat_message_last_messager% -> Player123
+
+                %gianchat_message_social_spy%
+                Description: Returns "enabled" if the player has social spy enabled, "disabled" otherwise
+                Example: %gianchat_message_social_spy% -> disabled
+
+                %gianchat_message_ignored_count%
+                Description: Gets the number of players the player is currently ignoring
+                Example: %gianchat_message_ignored_count% -> 3
+
+                Mention Placeholders
+                -------------------
+                %gianchat_mention_enabled%
+                Description: Returns "true" if mentions are globally enabled, "false" otherwise
+                Example: %gianchat_mention_enabled% -> true
+
+                Note: All placeholders require the player to be online to work.
+                Note: These placeholders are provided through PlaceholderAPI and require it to be installed.
+                """;
+            Files.writeString(placeholdersFile.toPath(), content, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            getLogger().warning("Failed to generate placeholders.txt: " + e.getMessage());
         }
     }
 }

@@ -80,6 +80,8 @@ public class GianChatExpansion extends PlaceholderExpansion {
                 return PlainTextComponentSerializer.plainText().serialize(format.getNameFormat());
             case "separator":
                 return PlainTextComponentSerializer.plainText().serialize(format.getSeparator());
+            case "name":
+                return format.getName();
             default:
                 return null;
         }
