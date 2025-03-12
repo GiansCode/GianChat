@@ -19,9 +19,17 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class ChatListener implements Listener {
     private final GianChat plugin;
+    private boolean consoleEnabled;
+    private String consoleFormat;
 
     public ChatListener(GianChat plugin) {
         this.plugin = plugin;
+        loadConsoleConfig();
+    }
+
+    public void loadConsoleConfig() {
+        this.consoleEnabled = plugin.getConfig().getBoolean("send-to-console.enabled", true);
+        this.consoleFormat = plugin.getConfig().getString("send-to-console.format", "[GianChat] %player% -> %message%");
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -30,6 +38,14 @@ public class ChatListener implements Listener {
         
         Player player = event.getPlayer();
         String message = PlainTextComponentSerializer.plainText().serialize(event.message());
+        
+        // Send to console if enabled
+        if (consoleEnabled) {
+            String consoleMessage = consoleFormat
+                .replace("%player%", player.getName())
+                .replace("%message%", message);
+            plugin.getLogger().info(consoleMessage);
+        }
         
         plugin.getFormatManager().getFormatForPlayer(player).ifPresent(format -> {
             // Process mentions first
