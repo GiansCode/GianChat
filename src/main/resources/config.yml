@@ -18,4 +18,9 @@ mentions:
     fade-out: 10
   action-bar:
     enabled: true
-    message: "<yellow>You were mentioned by %mentioner_player_name%!</yellow>" 
+    message: "<yellow>You were mentioned by %mentioner_player_name%!</yellow>"
+
+# Console message settings
+send-to-console:
+  enabled: true
+  format: '[GianChat] %player% -> %message%' 
