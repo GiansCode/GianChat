@@ -1,0 +1,76 @@
+# General Messages
+error:
+  no_permission: "<red>You don't have permission to use this command!"
+  player_only: "<red>This command can only be used by players!"
+  player_not_found: "<red>Player <yellow>%player%</yellow> was not found!"
+  invalid_usage: "<red>Invalid usage! Use: %usage%"
+  messages_disabled_self: "<red>You have private messages disabled!"
+  messages_disabled_other: "<red>%player% has private messages disabled!"
+  player_ignored: "<red>%player% is ignoring you!"
+  ignoring_player: "<red>You are ignoring <yellow>%player%</yellow>! Unignore them to send messages."
+
+# Format Related Messages
+format:
+  list_header: "<gold>Available chat formats:"
+  list_format: "<gray>- <white>%format_name%<gray>: %format_preview%"
+  no_formats: "<red>No chat formats found!"
+  format_not_found: "<red>Format '<yellow>%format%</yellow>' doesn't exist!"
+  format_preview: "<gold>Format preview:"
+  set: "<green>Your chat format has been set to <yellow>%format%</yellow>!"
+  help: "<yellow>Usage: /gianchat format <format>"
+  list:
+    header: "<gold>Available Chat Formats:"
+    entry: "<gray>- <yellow>%format%"
+    footer: "<gray>Use /gianchat format <name> to select a format"
+
+# Private Messaging
+message:
+  enabled: "<green>Private messages have been enabled!"
+  disabled: "<red>Private messages have been disabled!"
+  no_reply_target: "<red>You have no one to reply to!"
+  cannot_message_self: "<red>You cannot message yourself!"
+  recipient_messages_disabled: "<red>%player% has private messages disabled!"
+
+# Social Spy
+social_spy:
+  enabled: "<green>Social spy has been enabled!"
+  disabled: "<red>Social spy has been disabled!"
+  no_messages: "<gray>No messages to spy on yet!"
+
+# Ignore System
+ignore:
+  player_ignored: "<green>You are now ignoring <yellow>%player%</yellow>!"
+  player_unignored: "<green>You are no longer ignoring <yellow>%player%</yellow>!"
+  cannot_ignore_self: "<red>You cannot ignore yourself!"
+  already_ignored: "<red>You are already ignoring <yellow>%player%</yellow>!"
+  not_ignored: "<red>You are not ignoring <yellow>%player%</yellow>!"
+  list_header: "<yellow>Players you are ignoring:"
+  list_entry: "<gray>- %player%"
+  list_none: "<gray>You are not ignoring anyone!"
+
+# Mention System
+mention:
+  enabled: "<green>Mentions have been enabled!"
+  disabled: "<red>Mentions have been disabled!"
+  no_permission: "<red>You don't have permission to mention players!"
+
+# GianChat Command
+gianchat:
+  help_header: "<gold>GianChat Commands:"
+  help_format: "<gray>- <white>%command% <gray>- %description%"
+  reloaded: "<green>GianChat configurations reloaded successfully!"
+  help:
+    header: "<gradient:#48cae4:#90e0ef>GianChat</gradient> <gray>v%version% - Help Menu"
+    reload: "<gray>- <yellow>/gianchat reload <gray>- Reload the plugin configuration"
+    format: "<gray>- <yellow>/gianchat format <name> <gray>- Set your chat format"
+    list: "<gray>- <yellow>/gianchat list <gray>- List available chat formats"
+    footer: "<gray>Use /gianchat <command> for more information"
+
+# Message Toggle
+message_toggle:
+  enabled: "<green>Private messages enabled!"
+  disabled: "<red>Private messages disabled!"
+
+# Reload Command
+reload:
+  success: "<green>GianChat has been reloaded successfully!" 

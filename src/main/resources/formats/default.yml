@@ -1,0 +1,27 @@
+priority: 1
+
+prefix:
+  value: '<gradient:#00b4d8:#90e0ef>%vault_groupprefix%</gradient> '
+  tooltip:
+  - '<gradient:#0077b6:#00b4d8>Click to message this player</gradient>'
+  - '<gray>Rank: %vault_group%</gray>'
+  - '<gray>Joined: %player_first_join_date%</gray>'
+  click_event:
+    type: 'SUGGEST_COMMAND'
+    command: '/msg %player_name% '
+
+name:
+  value: '%player_name%'
+  tooltip:
+  - '<gradient:#0077b6:#00b4d8>Click to message this player</gradient>'
+  click_event:
+    type: 'SUGGEST_COMMAND'
+    command: '/msg %player_name% '
+
+separator:
+  value: '<gray>»</gray> '
+
+message:
+  value: '%message%'
+  tooltip:
+  - '<gray>Sent at: %server_time_HH:mm:ss%</gray>' 

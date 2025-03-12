@@ -1,0 +1,66 @@
+name: GianChat
+version: '${project.version}'
+main: gg.gianluca.gianchat.GianChat
+api-version: '1.21'
+depend: [PlaceholderAPI]
+authors: [Gianluca]
+description: Advanced chat formatting plugin with MiniMessage support
+
+commands:
+  gianchat:
+    description: Main plugin command
+    usage: /gianchat reload
+    aliases: [gc]
+  message:
+    description: Send a private message to a player
+    usage: /message <player> <message>
+    aliases: [msg, m, tell, w, whisper]
+  reply:
+    description: Reply to the last private message
+    usage: /reply <message>
+    aliases: [r]
+  socialspy:
+    description: Toggle social spy mode
+    usage: /socialspy
+    aliases: [spy]
+  messagetoggle:
+    description: Toggle private messages on/off
+    usage: /messagetoggle
+    aliases: [msgtoggle, togglepm]
+  ignore:
+    description: Ignore or unignore a player
+    usage: /ignore <player>
+    aliases: [block]
+
+permissions:
+  gianchat.commands.*:
+    description: Gives access to all GianChat commands
+    default: op
+    children:
+      gianchat.commands.list: true
+      gianchat.commands.reload: true
+      gianchat.commands.test: true
+  gianchat.commands.list:
+    description: Allows listing all chat formats
+    default: op
+  gianchat.commands.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  gianchat.commands.test:
+    description: Allows testing chat formats
+    default: op
+  gianchat.commands.message:
+    description: Allows sending private messages
+    default: true
+  gianchat.commands.socialspy:
+    description: Allows using social spy
+    default: op
+  gianchat.commands.messagetoggle:
+    description: Allows toggling private messages on/off
+    default: true
+  gianchat.commands.ignore:
+    description: Allows players to ignore other players
+    default: true
+  gianchat.mentions:
+    description: Allows players to mention others in chat
+    default: true 

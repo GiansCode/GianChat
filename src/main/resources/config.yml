@@ -1,0 +1,21 @@
+# Auto-save interval in minutes
+auto-save-interval: 5
+
+mentions:
+  enabled: true
+  replace-mention-with: "<yellow>@%mentioned_player_name%"
+  sound:
+    enabled: true
+    type: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 1.0
+    pitch: 1.0
+  title:
+    enabled: true
+    title: "<yellow><bold>Mention!</bold></yellow>"
+    subtitle: "<gray>You were mentioned by <yellow>%mentioner_player_name%</yellow> in chat</gray>"
+    fade-in: 10
+    stay: 40
+    fade-out: 10
+  action-bar:
+    enabled: true
+    message: "<yellow>You were mentioned by %mentioner_player_name%!</yellow>" 

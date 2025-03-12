@@ -1,0 +1,39 @@
+enabled: true
+
+reply-to-last-sent: true
+
+sound:
+  enabled: true
+  sound: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+  volume: 1
+  pitch: 1
+
+social-spy:
+  enabled: true
+  format: '<dark_gray>[<gradient:#00b4d8:#90e0ef>SocialSpy</gradient>] %sender_player_name% <dark_gray>→</dark_gray> %recipient_player_name%: <gray>%message%'
+
+sender-format:
+  format: '<dark_gray>[<gradient:#48cae4:#90e0ef>You</gradient> <dark_gray>→</dark_gray> <gradient:#48cae4:#90e0ef>%recipient_player_name%</gradient>]</dark_gray> <gray>%message%'
+  tooltip:
+  - '<gradient:#0077b6:#00b4d8>%recipient_player_name%''s Information</gradient>'
+  - '<gray>Rank: %recipient_vault_group%</gray>'
+  - '<gray>Playtime: %recipient_statistic_hours_played% hours</gray>'
+  - '<gray>Last Seen: %recipient_last_seen%</gray>'
+  - ''
+  - '<gray>Click to open chat history</gray>'
+  click_event:
+    type: 'RUN_COMMAND'
+    command: '/r '
+
+receiver-format:
+  format: '<dark_gray>[<gradient:#48cae4:#90e0ef>%sender_player_name%</gradient> <dark_gray>→</dark_gray> <gradient:#48cae4:#90e0ef>You</gradient>]</dark_gray> <gray>%message%'
+  tooltip:
+  - '<gradient:#0077b6:#00b4d8>%sender_player_name%''s Information</gradient>'
+  - '<gray>Rank: %sender_vault_group%</gray>'
+  - '<gray>Playtime: %sender_statistic_hours_played% hours</gray>'
+  - '<gray>Last Seen: %sender_last_seen%</gray>'
+  - ''
+  - '<gray>Click to quick reply</gray>'
+  click_event:
+    type: 'SUGGEST_COMMAND'
+    command: '/r ' 
