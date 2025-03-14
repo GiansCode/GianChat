@@ -1,5 +1,5 @@
 name: GianChat
-version: '${project.version}'
+version: '${version}'
 main: gg.gianluca.gianchat.GianChat
 api-version: '1.21'
 depend: [PlaceholderAPI]
