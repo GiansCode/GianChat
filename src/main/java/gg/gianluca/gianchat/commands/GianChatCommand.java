@@ -81,19 +81,19 @@ public class GianChatCommand implements CommandExecutor, TabCompleter {
         Map<String, String> placeholders = new HashMap<>();
         placeholders.put("player", player.getName());
         
-        player.sendMessage(plugin.getMessageManager().getMessage("help.header", placeholders));
+        player.sendMessage(plugin.getMessageManager().getMessage("gianchat.help.header", placeholders));
         
         if (player.hasPermission("gianchat.reload")) {
-            player.sendMessage(plugin.getMessageManager().getMessage("help.reload", placeholders));
+            player.sendMessage(plugin.getMessageManager().getMessage("gianchat.help.reload", placeholders));
         }
         if (player.hasPermission("gianchat.format")) {
-            player.sendMessage(plugin.getMessageManager().getMessage("help.format", placeholders));
+            player.sendMessage(plugin.getMessageManager().getMessage("gianchat.help.format", placeholders));
         }
         if (player.hasPermission("gianchat.list")) {
-            player.sendMessage(plugin.getMessageManager().getMessage("help.list", placeholders));
+            player.sendMessage(plugin.getMessageManager().getMessage("gianchat.help.list", placeholders));
         }
         
-        player.sendMessage(plugin.getMessageManager().getMessage("help.footer", placeholders));
+        player.sendMessage(plugin.getMessageManager().getMessage("gianchat.help.footer", placeholders));
     }
 
     private void showFormatHelp(Player player) {
